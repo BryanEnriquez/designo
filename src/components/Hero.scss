@@ -1,11 +1,111 @@
 @import '../css/variables';
 
 .hero {
-  padding: 80px 24px 0 24px;
-  margin: 0 auto;
-  background-color: orange;
+  position: relative;
+  padding: 80px 24px 451px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-primary-light, #fff);
+  background-color: var(--color-primary-peach, #e7816b);
+  overflow: hidden;
 
   @media (min-width: $media-m) {
-    padding: 60px 58px 0 58px;
+    padding: 60px 58px 457px 58px;
+    border-radius: 15px;
+  }
+  @media (min-width: $media-l) {
+    padding: 145px 95px;
+    align-items: flex-start;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    height: 640px;
+    width: auto;
+    background-image: url(../imgs/home/desktop/bg-pattern-hero-home.svg);
+    background-size: cover;
+    z-index: 2;
+
+    @media (min-width: $media-m) {
+      // left: 20.5%;
+      left: auto;
+      right: -18%;
+    }
+    @media (min-width: $media-l) {
+      right: 0;
+    }
+  }
+
+  &__content {
+    max-width: 32.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 5;
+
+    @media (min-width: $media-m) {
+      max-width: 57.3rem;
+    }
+    @media (min-width: $media-l) {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      font-weight: 500;
+
+      @media (min-width: $media-m) {
+        font-size: 4.8rem;
+        line-height: 4.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      margin: 2.4rem 0 2.4rem 0;
+
+      @media (min-width: $media-m) {
+        max-width: 44rem;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+      @media (min-width: $media-l) {
+        margin: 3.3rem 0 3.9rem 0;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    position: absolute;
+    width: 284px;
+    height: 573px;
+    z-index: 3;
+    bottom: -202px;
+    right: 50%;
+    transform: translate(50%, 0);
+
+    @media (min-width: $media-m) {
+      bottom: -185px;
+    }
+    @media (min-width: $media-l) {
+      bottom: -72px;
+      right: 95px;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__img {
+    position: relative;
+    height: 100%;
+    transform: scale(1.59);
+    left: -18.9%;
   }
 }
