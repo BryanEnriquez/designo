@@ -1,0 +1,35 @@
+.socials {
+  display: grid;
+  grid-template-columns: repeat(5, 2.4rem);
+  grid-template-rows: 2.4rem;
+  gap: 1.6rem;
+
+  li {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Note: Set viewBox for height/width to work
+.icon {
+  position: relative;
+  height: auto;
+  width: 100%;
+  fill: var(--color-primary-peach);
+
+  &:hover {
+    fill: var(--color-secondary-peach);
+  }
+
+  & path {
+    fill: inherit;
+  }
+}

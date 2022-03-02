@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Jost';
+  src: local('Jost'),
+    url('./css/fonts/Jost-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+  --color-primary-peach: #e7816b;
+  --color-primary-dark: #1d1c1e;
+  --color-primary-light: #ffffff;
+  --color-secondary-peach: #ffad9b;
+  --color-secondary-dark: #333136;
+  --color-secondary-light: #f1f3f5;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  box-sizing: border-box;
+  background-color: var(--color-primary-light, #fff);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.access {
+  position: relative;
+
+  // Remove el from flow, shift svg to start
+  &__hidden {
+    position: absolute;
+    visibility: hidden;
+  }
+}

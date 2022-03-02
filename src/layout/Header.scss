@@ -1,0 +1,139 @@
+@import '../css/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height; // minimized height
+  transition: height 0.2s;
+
+  display: grid;
+  grid-template-columns: 100%;
+  // Second row is hidden when menu is closed or on +tablet
+  grid-template-rows: $header-height 1fr;
+  align-items: center; // Vertical placement
+  overflow: hidden;
+  z-index: 100;
+  background-color: var(--primary-color-light, #fff);
+  // background-color: rgb(220, 173, 20);
+
+  @media (min-width: $media-m) {
+    height: $header-height-m;
+    // navbar (auto) takes up min space needed
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 100%;
+    padding: 0 4rem;
+  }
+  @media (min-width: $media-l) {
+    padding: 0 11.4%;
+  }
+
+  // Max header height on mobile
+  &--expanded {
+    height: 33.1rem; // 96 (base) + 235
+
+    // Auto collapse el on +tablet if class is active
+    @media (min-width: $media-m) {
+      height: $header-height-m;
+    }
+  }
+
+  // Positions logo + menu open/close btn
+  &__subgrid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    // Set height to tallest el
+    grid-template-rows: auto;
+    justify-items: end; // HORIZONTAL
+    align-items: center; // VERTICAL
+    margin: 0 2.4rem;
+    // background-color: cyan;
+
+    // Parent adds padding at this breakpoint, drop margin
+    @media (min-width: $media-m) {
+      margin: 0;
+    }
+  }
+
+  &__navbar {
+    // Expand into free space
+    // align-items:center on parent causes child to take min space
+    height: 100%;
+    padding: 4.8rem 2.4rem;
+
+    // Position li elements
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-primary-dark, #1d1c1e);
+
+    // +tablet
+    @media (min-width: $media-m) {
+      flex-direction: row;
+      // scale down nav bar to min space required
+      height: auto;
+      width: auto;
+      // Adjust so navbar aligns with logo
+      padding: 2px 0 0 0; // 0
+      background-color: inherit;
+    }
+
+    li {
+      @media (min-width: $media-m) {
+        &:not(:last-child) {
+          margin-right: 3.8rem; // 4rem
+        }
+      }
+
+      a {
+        font-size: 2.4rem;
+        line-height: 1.04;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: border-bottom 0.1s;
+
+        @media (min-width: $media-m) {
+          font-size: 1.4rem;
+          line-height: 1;
+          border-bottom: 1px solid transparent;
+          // compensate for effect letter spacing has on underline length
+          padding: 0 0 0 2px;
+        }
+
+        &:link,
+        &:visited {
+          color: var(--color-primary-light, #fff);
+
+          @media (min-width: $media-m) {
+            color: var(--color-secondary-dark, #333136);
+          }
+        }
+
+        &:hover,
+        &:active {
+          @media (min-width: $media-l) {
+            border-bottom: 1px solid #1d1c1e;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    height: 2rem;
+    width: 2.4rem;
+    border: 0 none #f1f3f5;
+    border-radius: 0;
+    background-color: inherit;
+
+    @media (min-width: $media-m) {
+      display: none;
+    }
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

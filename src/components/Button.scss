@@ -1,0 +1,35 @@
+@import '../css/variables';
+
+.btn {
+  // NOTE - Fixes height issue
+  display: inline-block;
+  padding: 1.7rem 2rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-weight: 500; // 600?
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0 none #000;
+  border-radius: 8px;
+  z-index: 10;
+  transition: color 0.2s, background-color 0.2s;
+
+  &--white {
+    color: var(--color-secondary-dark, #333136);
+    background-color: var(--color-primary-light, #fff);
+  }
+
+  &--primary {
+    color: var(--color-primary-light, #fff);
+    background-color: var(--color-primary-peach, #e7816b);
+  }
+
+  &:hover,
+  &:active {
+    @media (min-width: $media-l) {
+      color: var(--color-primary-light, #fff);
+      background-color: var(--color-secondary-peach, #ffad9b);
+    }
+  }
+}

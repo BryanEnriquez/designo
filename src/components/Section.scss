@@ -1,0 +1,19 @@
+@import '../css/variables';
+
+.section {
+  background-color: rgb(252, 151, 171);
+  width: 100%;
+
+  &--l {
+    // max-width: calc(100% - 24px);
+    max-width: 32.7rem;
+
+    @media (min-width: $media-m) {
+      // max-width: none;
+      max-width: 68.9rem;
+    }
+    @media (min-width: $media-l) {
+      max-width: none;
+    }
+  }
+}

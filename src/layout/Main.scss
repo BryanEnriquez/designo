@@ -1,0 +1,83 @@
+@import '../css/variables';
+
+.main {
+  margin-top: $header-height;
+
+  @media (min-width: $media-m) {
+    margin-top: $header-height-m;
+  }
+
+  &__content {
+    background-color: rgb(245, 191, 170);
+    max-width: 68.9rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 12rem;
+    justify-items: center;
+
+    @media (min-width: $media-m) {
+      width: calc(100% - 8rem);
+      max-width: 111.1rem;
+    }
+    @media (min-width: $media-l) {
+      gap: 16rem;
+    }
+
+    &--design {
+      gap: 9.6rem;
+      @media (min-width: $media-m) {
+        gap: 12rem;
+      }
+      @media (min-width: $media-l) {
+        gap: 16rem;
+      }
+    }
+
+    &--info {
+      gap: 12rem;
+      @media (min-width: $media-l) {
+        gap: 16rem;
+      }
+    }
+  }
+}
+
+.cta-wrapper {
+  margin-top: 12.1rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-light, #fff) 50%,
+    var(--color-primary-dark, #1d1c1e) 50% 100%
+  );
+
+  @media (min-width: $media-m) {
+    margin-top: 6.7rem;
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-light, #fff) 75%,
+      var(--color-primary-dark, #1d1c1e) 75% 100%
+    );
+  }
+  @media (min-width: $media-l) {
+    margin-top: 16rem;
+  }
+
+  &--design {
+    margin-top: 9.6rem;
+    @media (min-width: $media-m) {
+      margin-top: 12rem;
+    }
+    @media (min-width: $media-l) {
+      margin-top: 16rem;
+    }
+  }
+
+  &--info {
+    margin-top: 12rem;
+    @media (min-width: $media-l) {
+      margin-top: 16rem;
+    }
+  }
+}

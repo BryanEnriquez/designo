@@ -1,0 +1,14 @@
+.logo {
+  background-size: cover;
+  height: 27px;
+  width: 202px;
+  // background-color: rgb(220, 93, 20);
+
+  &--dark {
+    background-image: url(../imgs/shared/desktop/logo-dark.png);
+  }
+
+  &--light {
+    background-image: url(../imgs/shared/desktop/logo-light.png);
+  }
+}

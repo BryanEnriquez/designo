@@ -1,0 +1,11 @@
+@import '../css/variables';
+
+.hero {
+  padding: 80px 24px 0 24px;
+  margin: 0 auto;
+  background-color: orange;
+
+  @media (min-width: $media-m) {
+    padding: 60px 58px 0 58px;
+  }
+}
