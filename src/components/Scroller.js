@@ -1,14 +1,25 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigationType } from 'react-router-dom';
 
 const Scroller = () => {
-  const location = useLocation().pathname;
+  const navType = useNavigationType();
 
   useEffect(() => {
-    document.documentElement.scrollTop = 0;
-  }, [location]);
+    if (navType === 'PUSH') document.documentElement.scrollTop = 0;
+  }, [navType]);
 
   return null;
 };
 
 export default Scroller;
+
+// Always scrolls to top //
+// const Scroller = () => {
+//   const location = useLocation().pathname;
+//
+//   useEffect(() => {
+//     document.documentElement.scrollTop = 0;
+//   }, [location]);
+//
+//   return null;
+// };

@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../components/Section';
 import Hero from '../components/Hero';
+import Tiles from '../components/Tiles';
 
 const Home = () => {
   return (
@@ -8,7 +9,9 @@ const Home = () => {
       <Section>
         <Hero />
       </Section>
-      <Section limit>Section 2</Section>
+      <Section limit>
+        <Tiles />
+      </Section>
       <Section limit>Section 3</Section>
     </React.Fragment>
   );
