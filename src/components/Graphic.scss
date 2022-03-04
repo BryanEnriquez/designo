@@ -1,0 +1,30 @@
+.graphic {
+  position: relative;
+  width: 20.2rem;
+  height: 20.2rem;
+
+  &__svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../imgs/shared/desktop/bg-pattern-small-circle.svg);
+    background-size: cover;
+    z-index: 2;
+
+    &--270d {
+      transform: rotate(270deg);
+    }
+    &--90d {
+      transform: rotate(90deg);
+    }
+  }
+}

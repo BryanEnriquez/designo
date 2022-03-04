@@ -1,7 +1,8 @@
 import React from 'react';
-import Section from '../components/Section';
+import Section from '../layout/Section';
 import Hero from '../components/Hero';
 import Tiles from '../components/Tiles';
+import Statements from '../components/Statements';
 
 const Home = () => {
   return (
@@ -12,7 +13,9 @@ const Home = () => {
       <Section limit>
         <Tiles />
       </Section>
-      <Section limit>Section 3</Section>
+      <Section limit>
+        <Statements />
+      </Section>
     </React.Fragment>
   );
 };
