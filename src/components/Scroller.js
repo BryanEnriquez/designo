@@ -11,7 +11,10 @@ const Scroller = () => {
       if (!el) return;
 
       const navH = document.getElementById('header').offsetHeight;
-      window.scrollTo(0, el.offsetTop - navH);
+      window.scrollTo({
+        top: el.offsetTop - navH,
+        behavior: 'smooth',
+      });
     } else if (navType === 'PUSH') {
       document.documentElement.scrollTop = 0;
     }
