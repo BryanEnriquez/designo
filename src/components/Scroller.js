@@ -1,12 +1,21 @@
 import { useEffect } from 'react';
-import { useNavigationType } from 'react-router-dom';
+import { useLocation, useNavigationType } from 'react-router-dom';
 
 const Scroller = () => {
   const navType = useNavigationType();
+  const internalLink = useLocation();
 
   useEffect(() => {
-    if (navType === 'PUSH') document.documentElement.scrollTop = 0;
-  }, [navType]);
+    if (internalLink.hash && (navType === 'PUSH' || navType === 'REPLACE')) {
+      const el = document.getElementById(internalLink.hash.slice(1));
+      if (!el) return;
+
+      const navH = document.getElementById('header').offsetHeight;
+      window.scrollTo(0, el.offsetTop - navH);
+    } else if (navType === 'PUSH') {
+      document.documentElement.scrollTop = 0;
+    }
+  }, [internalLink, navType]);
 
   return null;
 };

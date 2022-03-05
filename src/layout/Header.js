@@ -24,7 +24,7 @@ const Header = (props) => {
   const modifier = expanded ? 'header--expanded' : '';
 
   return (
-    <header className={`header ${modifier}`}>
+    <header className={`header ${modifier}`} id="header">
       <div className="header__subgrid">
         <Logo color={props.logoColor} />
         <button className="header__button" onClick={onBtnClick}>

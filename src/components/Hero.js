@@ -13,7 +13,7 @@ const Hero = () => {
           fully responsive websites, app design, and engaging brand experiences.
           Find out more about our services.
         </p>
-        <Button to="/about" label="Learn more" />
+        <Button to="/#learn-more" label="Learn more" />
       </div>
       <div className="hero__img-wrapper">
         <img src={heroImg} alt="a phone" className="hero__img" />

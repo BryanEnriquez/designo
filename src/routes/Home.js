@@ -10,7 +10,7 @@ const Home = () => {
       <Section>
         <Hero />
       </Section>
-      <Section limit>
+      <Section limit id="learn-more">
         <Tiles />
       </Section>
       <Section limit>
