@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import CTA from '../components/CTA';
-import { calcLayoutMod, applyMod } from '../utils/calcLayoutMod';
+import { calcLayoutMod, resMod } from '../utils/calcLayoutMod';
 import './Main.scss';
 
 const Main = () => {
@@ -9,10 +9,10 @@ const Main = () => {
 
   return (
     <main className="main">
-      <div className={applyMod('main__content', mod)}>
+      <div className={resMod('main__content', mod)}>
         <Outlet />
       </div>
-      <div className={applyMod('cta-wrapper', mod)}>
+      <div className={resMod('cta-wrapper', mod)}>
         {location.pathname !== '/contact' && <CTA />}
       </div>
     </main>

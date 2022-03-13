@@ -11,4 +11,6 @@ export const calcLayoutMod = (location) => {
   }
 };
 
-export const applyMod = (cn, mod) => (mod ? `${cn} ${cn}--${mod}` : cn);
+export const resMod = (cn, mod) => (mod ? `${cn} ${cn}--${mod}` : cn);
+
+export const addMod = (cn, mod) => `${cn} ${cn}--${mod}`;

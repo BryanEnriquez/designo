@@ -1,0 +1,115 @@
+@import '../css/variables';
+
+.pattern {
+  position: absolute;
+  background-size: cover;
+  z-index: 2;
+
+  // Hero /////////
+  &--main {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    height: 640px;
+    // width: auto;
+    width: 640px;
+    background-image: url(../imgs/home/desktop/bg-pattern-hero-home.svg);
+
+    @media (min-width: $media-m) {
+      // left: 20.5%;
+      left: auto;
+      right: -18%;
+    }
+    @media (min-width: $media-l) {
+      right: 0;
+    }
+  }
+
+  &--web,
+  &--app,
+  &--graphic {
+    top: 0;
+    right: 0;
+    height: 584px;
+    width: 876px;
+    background-image: url(../imgs/shared/mobile/bg-pattern-design-pages-intro-mobile.svg);
+
+    @media (min-width: $media-m) {
+      top: 50%;
+      right: -146px;
+      transform: translate(0, -50%);
+      background-image: url(../imgs/shared/tablet/bg-pattern-design-pages-intro-tablet.svg);
+    }
+  }
+
+  &.pattern--web {
+    @media (min-width: $media-l) {
+      right: 0px;
+      background-image: url(../imgs/web-design/desktop/bg-pattern-intro-web.svg);
+    }
+  }
+
+  &.pattern--app {
+    @media (min-width: $media-l) {
+      right: auto;
+      left: -58px;
+      background-image: url(../imgs/app-design/desktop/bg-pattern-intro-app.svg);
+    }
+  }
+
+  &.pattern--graphic {
+    @media (min-width: $media-l) {
+      right: auto;
+      left: -58px;
+      background-image: url(../imgs/graphic-design/desktop/bg-pattern-intro-graphic.svg);
+    }
+  }
+
+  &--about {
+    width: 876px;
+    height: 946px;
+    top: -146px;
+    right: 0;
+    background-image: url(../imgs/about/mobile/bg-pattern-hero-about-mobile.svg);
+
+    @media (min-width: $media-m) {
+      width: 640px;
+      height: 640px;
+      top: -430px;
+      right: auto;
+      left: -121px;
+      background-image: url(../imgs/about/desktop/bg-pattern-hero-about-desktop.svg);
+    }
+    @media (min-width: $media-l) {
+      top: auto;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &--contact {
+    width: 876px;
+    height: 990px;
+    top: 0;
+    left: -92px;
+    background-image: url(../imgs/contact/mobile/bg-pattern-hero-contact-mobile.svg);
+
+    @media (min-width: $media-m) {
+      width: 640px;
+      height: 640px;
+      top: -83px;
+      left: -121px;
+      background-image: url(../imgs/contact/desktop/bg-pattern-hero-desktop.svg);
+    }
+    @media (min-width: $media-l) {
+      top: auto;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  // Page content //////
+  // &--about-c {}
+
+  // &--locations {}
+}

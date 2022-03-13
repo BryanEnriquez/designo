@@ -1,23 +1,29 @@
-import Button from './Button';
+import { useLocation } from 'react-router-dom';
+import Pattern from './Pattern';
+import { addMod } from '../utils/calcLayoutMod';
+import { heroConfig } from '../copy/heroConfig';
 import heroImg from '../imgs/home/desktop/image-hero-phone.png';
 import './Hero.scss';
 
-const Hero = () => {
+const renderHeroImg = () => (
+  <div className="hero__img-wrapper">
+    <img src={heroImg} alt="a phone" className="hero__img" />
+  </div>
+);
+
+const Hero = (props) => {
+  const path = useLocation().pathname;
+  const { heading, p, mod } = heroConfig[path];
+
   return (
-    <div className="hero">
-      <svg viewBox="0 0 640 640" className="hero__bg" />
-      <div className="hero__content">
-        <h1>Award-winning custom designs and digital branding solutions</h1>
-        <p>
-          With over 10 years in the industry, we are experienced in creating
-          fully responsive websites, app design, and engaging brand experiences.
-          Find out more about our services.
-        </p>
-        <Button to="/#learn-more" label="Learn more" />
+    <div className={addMod('hero', mod.hero)}>
+      <Pattern hero mod={mod.bg} />
+      <div className={addMod('hero__copy', mod.copy)}>
+        <h1>{heading}</h1>
+        <p>{p}</p>
       </div>
-      <div className="hero__img-wrapper">
-        <img src={heroImg} alt="a phone" className="hero__img" />
-      </div>
+      {props.children}
+      {path === '/' && renderHeroImg()}
     </div>
   );
 };

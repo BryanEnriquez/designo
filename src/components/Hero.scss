@@ -2,45 +2,73 @@
 
 .hero {
   position: relative;
-  padding: 80px 24px 451px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   color: var(--color-primary-light, #fff);
   background-color: var(--color-primary-peach, #e7816b);
   overflow: hidden;
 
   @media (min-width: $media-m) {
-    padding: 60px 58px 457px 58px;
     border-radius: 15px;
   }
-  @media (min-width: $media-l) {
-    padding: 145px 95px;
-    align-items: flex-start;
-  }
 
-  &__bg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    height: 640px;
-    width: auto;
-    background-image: url(../imgs/home/desktop/bg-pattern-hero-home.svg);
-    background-size: cover;
-    z-index: 2;
+  // Box modifiers /////
+  &--main {
+    padding: 80px 24px 451px 24px;
 
     @media (min-width: $media-m) {
-      // left: 20.5%;
-      left: auto;
-      right: -18%;
+      padding: 60px 58px 457px 58px;
     }
     @media (min-width: $media-l) {
-      right: 0;
+      padding: 145px 95px;
+      align-items: flex-start;
     }
   }
 
-  &__content {
+  &--design {
+    padding: 105px 24px;
+
+    @media (min-width: $media-m) {
+      padding: 64px 58px;
+    }
+    @media (min-width: $media-l) {
+      padding: 64px 190px;
+    }
+  }
+
+  &--about {
+    padding: 80px 24px;
+
+    @media (min-width: $media-m) {
+      padding: 64px 58px;
+    }
+    @media (min-width: $media-l) {
+      // TODO Adjust right padding
+      padding: 135px 82px 135px 95px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  &--contact {
+    padding: 72px 24px;
+
+    @media (min-width: $media-m) {
+      padding: 71px 58px;
+      align-items: flex-start;
+    }
+    @media (min-width: $media-l) {
+      padding: 55px 95px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  // text /////
+  &__copy {
     max-width: 32.7rem;
     display: flex;
     flex-direction: column;
@@ -51,15 +79,27 @@
     @media (min-width: $media-m) {
       max-width: 57.3rem;
     }
-    @media (min-width: $media-l) {
-      align-items: flex-start;
-      text-align: left;
+
+    &--main,
+    &--about {
+      @media (min-width: $media-l) {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    &--contact {
+      @media (min-width: $media-m) {
+        align-items: flex-start;
+        text-align: left;
+      }
     }
 
     h1 {
       font-size: 3.2rem;
       line-height: 3.6rem;
       font-weight: 500;
+      text-transform: capitalize;
 
       @media (min-width: $media-m) {
         font-size: 4.8rem;
@@ -70,19 +110,43 @@
     p {
       font-size: 1.5rem;
       line-height: 2.5rem;
-      margin: 2.4rem 0 2.4rem 0;
+      margin-top: 2.4rem;
+
+      @media (min-width: $media-m) {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+    }
+
+    &--main p {
+      margin-bottom: 2.4rem;
 
       @media (min-width: $media-m) {
         max-width: 44rem;
-        font-size: 1.6rem;
-        line-height: 2.6rem;
       }
       @media (min-width: $media-l) {
         margin: 3.3rem 0 3.9rem 0;
       }
     }
+
+    &--design p {
+      @media (min-width: $media-m) {
+        max-width: 39rem;
+      }
+    }
+
+    &--about p,
+    &--contact p {
+      @media (min-width: $media-m) {
+        margin-top: 3.2rem;
+      }
+      @media (min-width: $media-l) {
+        max-width: 46rem;
+      }
+    }
   }
 
+  // home page only /////
   &__img-wrapper {
     position: absolute;
     width: 284px;

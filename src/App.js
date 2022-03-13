@@ -4,6 +4,10 @@ import Header from './layout/Header';
 import Main from './layout/Main';
 import Footer from './layout/Footer';
 import Home from './routes/Home';
+import Design from './routes/Design';
+import About from './routes/About';
+import Locations from './routes/Locations';
+import Contact from './routes/Contact';
 import './App.scss';
 
 const App = () => {
@@ -14,15 +18,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route path="" element={<Home />} />
-          <Route path="web-design" element={<div>Web-design page</div>} />
-          <Route path="app-design" element={<div>App-design page</div>} />
-          <Route
-            path="graphic-design"
-            element={<div>Graphic-design page</div>}
-          />
-          <Route path="about" element={<div>Our company page</div>} />
-          <Route path="locations" element={<div>Locations page</div>} />
-          <Route path="contact" element={<div>Contact page</div>} />
+          <Route path="web-design" element={<Design />} />
+          <Route path="app-design" element={<Design />} />
+          <Route path="graphic-design" element={<Design />} />
+          <Route path="about" element={<About />} />
+          <Route path="locations" element={<Locations />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<div>This page doesn't exist!</div>} />
         </Route>
       </Routes>
