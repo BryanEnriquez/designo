@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import Pattern from './Pattern';
+import Copy from './Copy';
 import { addMod } from '../utils/calcLayoutMod';
 import { heroConfig } from '../copy/heroConfig';
 import heroImg from '../imgs/home/desktop/image-hero-phone.png';
@@ -19,8 +20,7 @@ const Hero = (props) => {
     <div className={addMod('hero', mod.hero)}>
       <Pattern hero mod={mod.bg} />
       <div className={addMod('hero__copy', mod.copy)}>
-        <h1>{heading}</h1>
-        <p>{p}</p>
+        <Copy hero main={heading} p={p} />
       </div>
       {props.children}
       {path === '/' && renderHeroImg()}

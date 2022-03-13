@@ -1,4 +1,5 @@
 import { useLocation, Link } from 'react-router-dom';
+import Copy from './Copy';
 import { tileLayouts } from '../copy/designLinks';
 import { resMod } from '../utils/calcLayoutMod';
 import './Tiles.scss';
@@ -6,8 +7,7 @@ import './Tiles.scss';
 const renderTile = (el) => (
   <Link className={'tiles__tile'} key={el.label} to={el.href}>
     <div className={resMod('tiles__bg', el.mod)} aria-hidden />
-    <h2>{el.label}</h2>
-    <p>View projects</p>
+    <Copy main={el.label} p={'View projects'} />
   </Link>
 );
 

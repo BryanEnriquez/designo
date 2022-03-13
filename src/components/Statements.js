@@ -1,4 +1,5 @@
 import Graphic from './Graphic';
+import Copy from './Copy';
 import { statements } from '../copy/statements';
 import './Statements.scss';
 
@@ -6,8 +7,7 @@ const renderStatement = (el) => (
   <div key={el.title} className="statements__block">
     <Graphic Svg={el.Svg} mod={el.mod} />
     <div className="statements__copy">
-      <h3>{el.title}</h3>
-      <p>{el.text}</p>
+      <Copy main={el.title} p={el.text} />
     </div>
   </div>
 );
