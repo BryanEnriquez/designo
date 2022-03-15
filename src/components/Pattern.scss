@@ -68,6 +68,8 @@
   &--about {
     width: 876px;
     height: 946px;
+    // top: calc(20vw - 221px);
+    // right: calc(37px - 10vw);
     top: -146px;
     right: 0;
     background-image: url(../imgs/about/mobile/bg-pattern-hero-about-mobile.svg);
@@ -109,7 +111,37 @@
   }
 
   // Page content //////
-  // &--about-c {}
+  &--c {
+    height: 584px;
+    width: 584px;
+    top: 0;
+    left: 0;
+    background-image: url(../imgs/shared/desktop/bg-pattern-three-circles.svg);
+
+    @media (min-width: $media-m) {
+      top: auto;
+      left: auto;
+      right: 2%;
+      bottom: 44px;
+    }
+    @media (min-width: $media-l) {
+      bottom: -294px;
+      background-position: 0 -294px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--c1 {
+    @media (min-width: $media-l) {
+      right: 197px;
+    }
+  }
+  &--c2 {
+    @media (min-width: $media-l) {
+      right: auto;
+      left: 0;
+    }
+  }
 
   // &--locations {}
 }

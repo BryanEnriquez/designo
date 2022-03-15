@@ -14,12 +14,12 @@ const renderHeroImg = () => (
 
 const Hero = (props) => {
   const path = useLocation().pathname;
-  const { heading, p, mod } = heroConfig[path];
+  const { heading, p, mods } = heroConfig[path];
 
   return (
-    <div className={addMod('hero', mod.hero)}>
-      <Pattern hero mod={mod.bg} />
-      <div className={addMod('hero__copy', mod.copy)}>
+    <div className={addMod('hero', mods.hero)}>
+      <Pattern hero mod={mods.bg} />
+      <div className={addMod('hero__copy', mods.copy)}>
         <Copy hero main={heading} p={p} />
       </div>
       {props.children}

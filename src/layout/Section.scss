@@ -1,7 +1,8 @@
 @import '../css/variables';
 
-.section {
+.s {
   width: 100%;
+  overflow: hidden;
 
   &--l {
     // max-width: calc(100% - 24px);
@@ -13,6 +14,12 @@
     }
     @media (min-width: $media-l) {
       max-width: none;
+    }
+  }
+
+  &--r {
+    @media (min-width: 691px) {
+      border-radius: 15px;
     }
   }
 }

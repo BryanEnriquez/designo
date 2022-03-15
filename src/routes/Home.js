@@ -8,7 +8,7 @@ import Statements from '../components/Statements';
 const Home = () => {
   return (
     <React.Fragment>
-      <Section>
+      <Section r>
         <Hero>
           <Button to="/#learn-more" label="Learn more" />
         </Hero>

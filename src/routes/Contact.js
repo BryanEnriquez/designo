@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 const Contact = () => {
   return (
     <React.Fragment>
-      <Section>
+      <Section r>
         <Hero />
       </Section>
     </React.Fragment>

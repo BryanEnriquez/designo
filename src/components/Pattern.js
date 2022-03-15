@@ -1,4 +1,4 @@
-import { addMod } from '../utils/calcLayoutMod';
+import { addMod, addMods } from '../utils/calcLayoutMod';
 import './Pattern.scss';
 
 const renderPattern = (mod) => <svg className={addMod('pattern', mod)} />;
@@ -6,7 +6,9 @@ const renderPattern = (mod) => <svg className={addMod('pattern', mod)} />;
 const Pattern = ({ hero, mod }) => {
   if (hero) return renderPattern(mod);
 
-  if (mod === 'about') return renderPattern('about-c');
+  if (mod === 'c1' || mod === 'c2') {
+    return <svg className={addMods('pattern', ['c', mod])} />;
+  }
 
   // locations
   return (

@@ -1,7 +1,8 @@
 import './Section.scss';
+import { resMods } from '../utils/calcLayoutMod';
 
-const Section = ({ limit, children, id }) => {
-  const cn = `section${limit ? ' section--l' : ''}`;
+const Section = ({ limit, r, children, id }) => {
+  const cn = resMods('s', { l: limit, r });
   return (
     <section className={cn} {...(id && { id })}>
       {children}

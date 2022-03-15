@@ -1,0 +1,76 @@
+@import '../css/variables';
+
+@mixin imgProps($img1, $img2, $img3, $side) {
+  height: 320px;
+  background-image: url($img1);
+
+  @media (min-width: 500px) {
+    background-image: url($img2);
+    background-position: 50% 50%;
+  }
+  @media (min-width: 900px) {
+    height: 370px;
+  }
+  @media (min-width: $media-l) {
+    height: 100%;
+    width: 476px;
+    grid-area: $side;
+    background-image: url($img3);
+  }
+}
+
+.frame {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+
+  @media (min-width: $media-l) {
+    grid-template-rows: auto;
+    grid-template-areas: 'left right';
+  }
+
+  &--r {
+    @media (min-width: $media-l) {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &--l {
+    @media (min-width: $media-l) {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  &__img {
+    // width: 100%;
+    background-size: cover;
+    height: 320px;
+
+    &--about {
+      @include imgProps(
+        '../imgs/about/mobile/image-about-hero.jpg',
+        '../imgs/about/tablet/image-about-hero.jpg',
+        '../imgs/about/desktop/image-about-hero.jpg',
+        right
+      );
+    }
+
+    &--c1 {
+      @include imgProps(
+        '../imgs/about/mobile/image-world-class-talent.jpg',
+        '../imgs/about/tablet/image-world-class-talent.jpg',
+        '../imgs/about/desktop/image-world-class-talent.jpg',
+        left
+      );
+    }
+
+    &--c2 {
+      @include imgProps(
+        '../imgs/about/mobile/image-real-deal.jpg',
+        '../imgs/about/tablet/image-real-deal.jpg',
+        '../imgs/about/desktop/image-real-deal.jpg',
+        right
+      );
+    }
+  }
+}

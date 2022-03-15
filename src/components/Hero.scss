@@ -10,10 +10,6 @@
   background-color: var(--color-primary-peach, #e7816b);
   overflow: hidden;
 
-  @media (min-width: $media-m) {
-    border-radius: 15px;
-  }
-
   // Box modifiers /////
   &--main {
     padding: 80px 24px 451px 24px;
@@ -45,8 +41,8 @@
       padding: 64px 58px;
     }
     @media (min-width: $media-l) {
-      // TODO Adjust right padding
-      padding: 135px 82px 135px 95px;
+      // padding: 135px 70px 135px 95px;
+      padding: 135px 30px 135px 95px;
       align-items: flex-start;
       justify-content: center;
     }
@@ -67,19 +63,32 @@
     }
   }
 
-  // text /////
+  // text container /////
   &__copy {
-    max-width: 32.7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     z-index: 5;
 
-    @media (min-width: $media-m) {
-      max-width: 57.3rem;
+    // Sets max text width
+    &--main,
+    &--design,
+    &--contact {
+      max-width: 32.7rem;
+      @media (min-width: $media-m) {
+        max-width: 57.3rem;
+      }
     }
 
+    &--about {
+      max-width: 44rem;
+      @media (min-width: $media-m) {
+        max-width: 57.3rem;
+      }
+    }
+
+    // Sets alignment
     &--main,
     &--about {
       @media (min-width: $media-l) {

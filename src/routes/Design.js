@@ -7,7 +7,7 @@ import Tiles from '../components/Tiles';
 const Design = () => {
   return (
     <React.Fragment>
-      <Section>
+      <Section r>
         <Hero />
       </Section>
       <Section limit>
