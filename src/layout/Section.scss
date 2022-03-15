@@ -22,4 +22,11 @@
       border-radius: 15px;
     }
   }
+
+  &--shift {
+    margin-top: -12rem;
+    @media (min-width: $media-m) {
+      margin: 0;
+    }
+  }
 }

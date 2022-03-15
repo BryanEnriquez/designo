@@ -3,6 +3,7 @@ import Section from '../layout/Section';
 import Frame from '../components/Frame';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
+import LocationLinks from '../components/LocationLinks';
 import { aboutCopy } from '../copy/aboutCopy';
 
 const About = () => {
@@ -13,10 +14,13 @@ const About = () => {
           <Hero />
         </Frame>
       </Section>
-      <Section r>
+      <Section shift r>
         <Frame img="c1" side="l">
           <Content content={aboutCopy.c1} pattern="c1" />
         </Frame>
+      </Section>
+      <Section>
+        <LocationLinks />
       </Section>
       <Section r>
         <Frame img="c2">
