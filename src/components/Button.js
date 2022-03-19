@@ -8,12 +8,16 @@ const Button = (props) => {
       {props.label}
     </Link>
   ) : (
-    <button className={cn} {...{ onClick: props.onClick }}>
+    <button
+      disabled={props.disabled}
+      className={cn}
+      {...{ onClick: props.onClick }}
+    >
       {props.label}
     </button>
   );
 };
 
-Button.defaultProps = { color: 'white' };
+Button.defaultProps = { color: 'white', disabled: false };
 
 export default Button;

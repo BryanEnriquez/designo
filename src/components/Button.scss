@@ -3,6 +3,7 @@
 .btn {
   display: flex;
   justify-content: center;
+  padding-left: 1px; //offset letter-spacing
   align-items: center;
   height: 5.6rem;
   width: 15.2rem;
@@ -15,7 +16,7 @@
   border: 0 none #000;
   border-radius: 8px;
   z-index: 10;
-  transition: color 0.2s, background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.3s;
 
   &--white {
     color: var(--color-secondary-dark, #333136);
@@ -25,6 +26,10 @@
   &--primary {
     color: var(--color-primary-light, #fff);
     background-color: var(--color-primary-peach, #e7816b);
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 
   &:hover,
