@@ -12,7 +12,7 @@ const List = ({ items, children }) => (
 const LocationCard = ({ location, full, className }) => {
   return (
     <div {...(className && { className })}>
-      {full ? <h3>{location.country}</h3> : null}
+      {full ? <span>{location.country}</span> : null}
       <List items={location.address} />
       <List items={location.contact}>
         <li>{`Contact${full ? '' : ' Us (Central Office)'}`}</li>

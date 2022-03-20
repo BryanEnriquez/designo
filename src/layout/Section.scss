@@ -18,14 +18,14 @@
   }
 
   &--r {
-    @media (min-width: 691px) {
+    @media (min-width: $media-s) {
       border-radius: 15px;
     }
   }
 
   &--shift {
     margin-top: -12rem;
-    @media (min-width: $media-m) {
+    @media (min-width: $media-s) {
       margin: 0;
     }
   }

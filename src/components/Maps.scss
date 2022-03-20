@@ -1,0 +1,138 @@
+@import '../css/variables';
+
+.maps {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 4rem;
+
+  @media (min-width: $media-m) {
+    gap: 120px;
+  }
+  @media (min-width: $media-l) {
+    gap: 32px;
+  }
+
+  // UI pattern
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    @media (min-width: $media-m) {
+      gap: 24px;
+    }
+    @media (min-width: $media-l) {
+      grid-template-rows: auto;
+      gap: 30px;
+    }
+  }
+  & &__box {
+    &:nth-of-type(odd) {
+      @media (min-width: $media-l) {
+        grid-template-columns: 1fr auto;
+
+        .maps__map {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+        }
+      }
+    }
+    &:nth-of-type(even) {
+      @media (min-width: $media-l) {
+        grid-template-columns: auto 1fr;
+      }
+    }
+  }
+
+  // grid items
+  &__map,
+  &__info-wrapper {
+    overflow: hidden;
+
+    @media (min-width: 691px) {
+      border-radius: 15px;
+    }
+  }
+
+  &__map {
+    height: 320px;
+    width: 100%;
+
+    @media (min-width: $media-m) {
+      height: 326px;
+    }
+    @media (min-width: $media-l) {
+      height: 100%;
+      width: 350px;
+    }
+  }
+
+  &__info-wrapper {
+    position: relative;
+    background-color: #fdf3f0;
+  }
+
+  &__info {
+    position: relative;
+    padding: 80px 24px;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+
+    @media (min-width: $media-m) {
+      text-align: left;
+      width: 100%;
+      padding: 88px 74px;
+    }
+    @media (min-width: $media-l) {
+      width: 100%;
+      padding: 88px 95px;
+    }
+
+    span {
+      display: block;
+      padding-bottom: 2.4rem;
+      font-weight: 600;
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      color: var(--color-primary-peach, #e7816b);
+
+      @media (min-width: $media-m) {
+        font-size: 4rem;
+        line-height: 4.8rem;
+      }
+    }
+
+    ul {
+      @media (min-width: $media-m) {
+        display: inline-block;
+        padding-right: 20px;
+        width: 50%;
+      }
+
+      &:first-of-type {
+        margin-bottom: 2.4rem;
+
+        @media (min-width: $media-m) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    li {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      color: var(--color-secondary-dark, #333136);
+
+      @media (min-width: $media-m) {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+
+      &:first-child {
+        font-weight: 700;
+      }
+    }
+  }
+}
