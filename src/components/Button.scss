@@ -9,7 +9,6 @@
   width: 15.2rem;
   font-size: 1.5rem;
   line-height: 2.2rem;
-  font-weight: 500; // 500~600
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
@@ -21,6 +20,7 @@
   &--white {
     color: var(--color-secondary-dark, #333136);
     background-color: var(--color-primary-light, #fff);
+    font-weight: 600;
   }
 
   &--primary {

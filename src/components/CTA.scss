@@ -2,9 +2,10 @@
 
 .cta {
   position: relative;
-  max-width: 32.7rem;
-  margin: 0 auto 0;
-  padding: 6.4rem 2.4rem;
+  width: calc(100% - 48px);
+  max-width: 1111px;
+  margin: 0 auto;
+  padding: 64px 24px;
   overflow: hidden;
 
   border-radius: 15px;
@@ -12,19 +13,18 @@
   background-color: var(--color-primary-peach, #e7816b);
 
   @media (min-width: $media-m) {
-    padding: 5.7rem 12rem;
-    max-width: 69rem;
+    padding: 57px 57px;
+    width: calc(100% - 78px);
   }
-  @media (min-width: $media-l) {
-    padding: 7.2rem 9.5rem;
-    max-width: 111.1rem;
+  @media (min-width: $cta-l) {
+    padding: 72px 95px;
   }
 
   &__bg {
     position: absolute;
     // display: block;
     bottom: 0;
-    right: -45%;
+    right: -154px;
     height: 100%;
     width: auto;
     transform: scale(160%);
@@ -37,7 +37,7 @@
       transform: scale(170%);
       right: 2%;
     }
-    @media (min-width: $media-l) {
+    @media (min-width: $cta-l) {
       transform: scale(200%);
       right: 19%;
     }
@@ -51,23 +51,21 @@
     text-align: center;
     z-index: 10;
 
-    @media (min-width: $media-l) {
+    @media (min-width: $cta-l) {
       flex-direction: row;
       justify-content: space-between;
       text-align: left;
     }
 
     .copy {
-      @media (min-width: $media-l) {
-        max-width: 44rem;
-      }
+      max-width: 44rem;
     }
 
     span {
       display: block;
       font-size: 3.2rem;
       font-weight: 500;
-      line-height: 112%;
+      line-height: 3.6rem;
 
       @media (min-width: $media-m) {
         font-size: 4rem;
@@ -78,14 +76,14 @@
     p {
       margin: 1.6rem 0 3.2rem 0;
       font-size: 1.5rem;
-      line-height: 167%;
+      line-height: 2.5rem;
       font-weight: 400;
 
       @media (min-width: $media-m) {
         font-size: 1.6rem;
-        line-height: 162%;
+        line-height: 2.6rem;
       }
-      @media (min-width: $media-l) {
+      @media (min-width: $cta-l) {
         margin: 1.6rem 0 0 0;
       }
     }
