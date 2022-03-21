@@ -5,62 +5,65 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: $header-height; // minimized height
-  transition: height 0.2s;
-
-  display: grid;
-  grid-template-columns: 100%;
-  // Second row is hidden when menu is closed or on +tablet
-  grid-template-rows: $header-height 1fr;
-  align-items: center; // Vertical placement
+  height: $header-height;
   overflow: hidden;
   z-index: 100;
   background-color: var(--primary-color-light, #fff);
-  // background-color: rgb(220, 173, 20);
+  transition: height 0.2s;
 
   @media (min-width: $media-m) {
+    position: absolute;
     height: $header-height-m;
-    // navbar (auto) takes up min space needed
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 100%;
-    padding: 0 4rem;
-  }
-  @media (min-width: $media-l) {
-    padding: 0 11.4%;
+    display: flex;
+    flex-direction: column;
+    // navbar height is set to auto, center el
+    justify-content: center;
   }
 
-  // Max header height on mobile
-  &--expanded {
-    height: 33.1rem; // 96 (base) + 235
+  &--open {
+    height: calc($header-height + 23.5rem); // 96 (base) + 235
 
     // Auto collapse el on +tablet if class is active
     @media (min-width: $media-m) {
       height: $header-height-m;
     }
   }
+}
+
+.navbar {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: $header-height 1fr;
+
+  @media (min-width: $media-m) {
+    height: auto;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    width: calc(100% - 80px);
+    max-width: 1111px;
+    margin: 0 auto;
+  }
 
   // Positions logo + menu open/close btn
-  &__subgrid {
+  &__left {
     display: grid;
     grid-template-columns: auto 1fr;
-    // Set height to tallest el
     grid-template-rows: auto;
     justify-items: end; // HORIZONTAL
     align-items: center; // VERTICAL
-    margin: 0 2.4rem;
-    // background-color: cyan;
+    padding: 0 24px;
 
-    // Parent adds padding at this breakpoint, drop margin
     @media (min-width: $media-m) {
-      margin: 0;
+      padding: 0;
     }
   }
 
-  &__navbar {
-    // Expand into free space
-    // align-items:center on parent causes child to take min space
+  &__right {
+    // Expand into free space when nav bar is opened
     height: 100%;
-    padding: 4.8rem 2.4rem;
+    padding: 48px 24px;
 
     // Position li elements
     display: flex;
@@ -80,22 +83,26 @@
     }
 
     li {
+      display: block;
+      font-size: 2.4rem;
+      line-height: 2.5rem;
+
       @media (min-width: $media-m) {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+
         &:not(:last-child) {
-          margin-right: 3.8rem; // 4rem
+          margin-right: 38px; // 3.8rem
         }
       }
 
       a {
-        font-size: 2.4rem;
-        line-height: 1.04;
+        display: inline-block;
         text-transform: uppercase;
         letter-spacing: 2px;
         transition: border-bottom 0.1s;
 
         @media (min-width: $media-m) {
-          font-size: 1.4rem;
-          line-height: 1;
           border-bottom: 1px solid transparent;
           // compensate for effect letter spacing has on underline length
           padding: 0 0 0 2px;

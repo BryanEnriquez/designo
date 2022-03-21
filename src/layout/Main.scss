@@ -1,12 +1,6 @@
 @import '../css/variables';
 
 .main {
-  margin-top: $header-height;
-
-  @media (min-width: $media-m) {
-    margin-top: $header-height-m;
-  }
-
   &__content {
     max-width: 68.9rem;
     margin: 0 auto;
@@ -17,7 +11,7 @@
     justify-items: center;
 
     @media (min-width: $media-m) {
-      width: calc(100% - 8rem);
+      width: calc(100% - 80px);
       max-width: 111.1rem;
     }
     @media (min-width: $media-l) {

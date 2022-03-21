@@ -4,35 +4,44 @@ import NavLinks from '../components/NavLinks';
 import Logo from '../components/Logo';
 import Modal from '../components/Modal';
 import { navLinks } from '../copy/navLinks';
+import { resMod } from '../utils/calcLayoutMod';
 import { ReactComponent as IconMenu } from '../imgs/shared/mobile/icon-hamburger.svg';
 import { ReactComponent as IconClose } from '../imgs/shared/mobile/icon-close.svg';
 import './Header.scss';
 
+const NavBar = ({ open, onClick, logoColor }) => {
+  return (
+    <nav className="navbar">
+      <div className="navbar__left">
+        <Logo color={logoColor} />
+        <button className="navbar__button" onClick={onClick}>
+          {open ? <IconClose /> : <IconMenu />}
+        </button>
+      </div>
+      <NavLinks className="navbar__right" links={navLinks} />
+    </nav>
+  );
+};
+
 const Header = (props) => {
-  const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
   const { location } = props;
 
   useEffect(() => {
-    setExpanded(false);
+    setOpen(false);
   }, [location]);
 
   const onBtnClick = (e) => {
     e.preventDefault();
-    setExpanded(!expanded);
+    setOpen(!open);
   };
 
-  const modifier = expanded ? 'header--expanded' : '';
+  const mod = resMod('header', open && 'open');
 
   return (
-    <header className={`header ${modifier}`} id="header">
-      <div className="header__subgrid">
-        <Logo color={props.logoColor} />
-        <button className="header__button" onClick={onBtnClick}>
-          {expanded ? <IconClose /> : <IconMenu />}
-        </button>
-      </div>
-      <NavLinks className="header__navbar" links={navLinks} />
-      {expanded ? <Modal onBgClick={onBtnClick} /> : null}
+    <header className={mod} id="header">
+      <NavBar open={open} onClick={onBtnClick} logoColor={props.logoColor} />
+      {open && <Modal onBgClick={onBtnClick} />}
     </header>
   );
 };

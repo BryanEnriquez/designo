@@ -1,15 +1,24 @@
 @import '../css/variables';
 
 .footer {
-  background-color: var(--color-primary-dark, #1d1c1e);
-  padding: 6.4rem 2.4rem;
+  padding: 64px 24px;
   color: var(--color-primary-light, #fff);
+  background-color: var(--color-primary-dark, #1d1c1e);
 
   @media (min-width: $media-m) {
-    padding: 8rem 3.9rem;
+    padding: 8rem 0;
   }
   @media (min-width: $media-l) {
-    padding: 7.2rem 11.4%; // 7.2rem 16.5rem
+    padding: 7.2rem 0;
+  }
+
+  &__nav,
+  &__info {
+    @media (min-width: $media-m) {
+      margin: 0 auto;
+      width: calc(100% - 78px);
+      max-width: 1111px;
+    }
   }
 
   // Group 1 ////////////////
@@ -37,12 +46,12 @@
     @media (min-width: $media-m) {
       grid-template-columns: repeat(3, auto);
       grid-template-rows: auto;
-      gap: 4.2rem;
+      gap: 42px;
       padding: 0;
     }
     // li elements get padding, reduce gap
     @media (min-width: $media-l) {
-      gap: 3.9rem;
+      gap: 39px;
     }
 
     li {
@@ -96,7 +105,7 @@
     @media (min-width: $media-m) {
       flex-direction: row;
       align-items: flex-end;
-      margin: 3.2rem 0 0 0;
+      padding: 3.2rem 0 0 0;
     }
   }
 
