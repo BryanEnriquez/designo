@@ -1,19 +1,25 @@
 @import '../css/variables';
 
 .s {
-  width: 100%;
   overflow: hidden;
 
-  &--l {
-    // max-width: calc(100% - 24px);
-    max-width: 32.7rem;
+  &--s1 {
+    width: 100%;
+    max-width: 68.9rem;
 
     @media (min-width: $media-m) {
-      // max-width: none;
-      max-width: 68.9rem;
+      width: calc(100% - 80px);
+      max-width: $width-max;
     }
-    @media (min-width: $media-l) {
-      max-width: none;
+  }
+
+  &--s2 {
+    width: calc(100% - 48px);
+    max-width: 68.9rem;
+
+    @media (min-width: $media-m) {
+      width: calc(100% - 80px);
+      max-width: $width-max;
     }
   }
 

@@ -2,18 +2,12 @@
 
 .main {
   &__content {
-    max-width: 68.9rem;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     gap: 12rem;
     justify-items: center;
 
-    @media (min-width: $media-m) {
-      width: calc(100% - 80px);
-      max-width: 111.1rem;
-    }
     @media (min-width: $media-l) {
       gap: 16rem;
     }

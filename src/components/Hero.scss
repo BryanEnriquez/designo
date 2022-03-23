@@ -41,8 +41,8 @@
       padding: 64px 58px;
     }
     @media (min-width: $media-l) {
-      // padding: 135px 70px 135px 95px;
-      padding: 135px 30px 135px 95px;
+      // padding: 135px 55px 135px 95px;
+      padding: 21.26% 60px 21.26% 95px;
       align-items: flex-start;
       justify-content: center;
     }
@@ -101,6 +101,9 @@
       @media (min-width: $media-m) {
         align-items: flex-start;
         text-align: left;
+      }
+      @media (min-width: $media-l) {
+        margin-right: 45px;
       }
     }
 

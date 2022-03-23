@@ -8,15 +8,15 @@ import Statements from '../components/Statements';
 const Home = () => {
   return (
     <React.Fragment>
-      <Section r>
+      <Section s1 r>
         <Hero>
-          <Button to="/#learn-more" label="Learn more" />
+          <Button to="/about" label="Learn more" />
         </Hero>
       </Section>
-      <Section limit id="learn-more">
+      <Section s2>
         <Tiles />
       </Section>
-      <Section limit>
+      <Section s2>
         <Statements />
       </Section>
     </React.Fragment>

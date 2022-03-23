@@ -42,7 +42,7 @@
     grid-template-rows: auto;
     align-items: center;
     width: calc(100% - 80px);
-    max-width: 1111px;
+    max-width: $width-max;
     margin: 0 auto;
   }
 

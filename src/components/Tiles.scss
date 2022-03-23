@@ -1,9 +1,11 @@
 @import '../css/variables';
 
+$bg-m: 550px;
+
 @mixin web($desktop-url) {
   background-image: url(../imgs/home/mobile/image-web-design.jpg);
 
-  @media (min-width: $media-m) {
+  @media (min-width: $bg-m) {
     background-image: url(../imgs/home/tablet/image-web-design.jpg);
   }
   @media (min-width: $media-l) {
@@ -20,6 +22,7 @@
   @media (min-width: $media-l) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    gap: 24px 29px;
   }
 
   &__box-l {
@@ -44,6 +47,7 @@
     }
     @media (min-width: $media-l) {
       grid-auto-rows: 30.8rem;
+      gap: 24px;
     }
   }
 
@@ -52,14 +56,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     height: 100%;
+    padding: 5px;
+
     overflow: hidden;
     border-radius: 15px;
     color: var(--color-primary-light, #fff);
     background-color: #000;
     text-transform: uppercase;
+    text-align: center;
     transition: background-color 0.2s;
+
+    @media (min-width: $media-l) {
+      padding: 15px;
+    }
 
     &:hover,
     &:active {
@@ -130,6 +141,13 @@
     opacity: 0.5;
     transition: opacity 0.2s;
 
+    @media (min-width: $bg-m) {
+      background-position: center;
+    }
+    @media (min-width: $media-m) {
+      background-position: top;
+    }
+
     &--web {
       @include web('../imgs/home/desktop/image-web-design-small.jpg');
     }
@@ -139,7 +157,7 @@
 
     &--app {
       background-image: url(../imgs/home/mobile/image-app-design.jpg);
-      @media (min-width: $media-m) {
+      @media (min-width: $bg-m) {
         background-image: url(../imgs/home/tablet/image-app-design.jpg);
       }
       @media (min-width: $media-l) {
@@ -149,7 +167,7 @@
 
     &--graphic {
       background-image: url(../imgs/home/mobile/image-graphic-design.jpg);
-      @media (min-width: $media-m) {
+      @media (min-width: $bg-m) {
         background-image: url(../imgs/home/tablet/image-graphic-design.jpg);
       }
       @media (min-width: $media-l) {

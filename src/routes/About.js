@@ -9,20 +9,20 @@ import { aboutCopy } from '../copy/aboutCopy';
 const About = () => {
   return (
     <React.Fragment>
-      <Section r>
+      <Section s1 r>
         <Frame img="about">
           <Hero />
         </Frame>
       </Section>
-      <Section shift r>
+      <Section s1 shift r>
         <Frame img="c1" side="l">
           <Content content={aboutCopy.c1} pattern="c1" />
         </Frame>
       </Section>
-      <Section>
+      <Section s2>
         <LocationLinks />
       </Section>
-      <Section r>
+      <Section s1 r>
         <Frame img="c2">
           <Content content={aboutCopy.c2} pattern="c2" pad="e" />
         </Frame>

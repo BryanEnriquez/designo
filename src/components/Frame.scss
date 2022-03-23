@@ -2,18 +2,15 @@
 
 @mixin imgProps($img1, $img2, $img3, $side) {
   height: 320px;
+  background-position: center;
   background-image: url($img1);
 
   @media (min-width: 500px) {
     background-image: url($img2);
-    background-position: 50% 50%;
-  }
-  @media (min-width: 900px) {
-    height: 370px;
   }
   @media (min-width: $media-l) {
     height: 100%;
-    width: 476px;
+    width: 100%;
     grid-area: $side;
     background-image: url($img3);
   }
@@ -31,13 +28,15 @@
 
   &--r {
     @media (min-width: $media-l) {
-      grid-template-columns: 1fr auto;
+      // grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr 42.84%;
     }
   }
 
   &--l {
     @media (min-width: $media-l) {
-      grid-template-columns: auto 1fr;
+      // grid-template-columns: auto 1fr;
+      grid-template-columns: 42.84% 1fr;
     }
   }
 

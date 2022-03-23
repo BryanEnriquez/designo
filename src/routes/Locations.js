@@ -5,7 +5,7 @@ import Maps from '../components/Maps';
 const Locations = () => {
   return (
     <React.Fragment>
-      <Section>
+      <Section s1>
         <Maps />
       </Section>
     </React.Fragment>

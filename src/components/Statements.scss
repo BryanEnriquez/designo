@@ -5,21 +5,27 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
   gap: 8rem;
+  max-width: 43.8rem;
+  margin: 0 auto;
 
   @media (min-width: $media-m) {
     gap: 3.2rem;
+    max-width: 68.8rem;
   }
   @media (min-width: $media-l) {
+    max-width: none;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    gap: 3rem;
+    gap: 30px;
+    // Prevents uneven text alignment when not all elements are identical in height
+    align-items: start;
   }
 
   &__block {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
-    gap: 4.8rem;
+    gap: 48px;
     justify-items: center;
 
     @media (min-width: $media-m) {
@@ -30,7 +36,6 @@
     @media (min-width: $media-l) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(2, auto);
-      align-items: center;
     }
   }
 
@@ -52,13 +57,13 @@
       line-height: 2.6rem;
       letter-spacing: 5px;
       text-transform: uppercase;
-      margin: 0 0 3.2rem;
+      padding: 0 0 32px 0;
 
       @media (min-width: $media-m) {
-        margin: 0 0 1.6rem;
+        padding: 0 0 16px 0;
       }
       @media (min-width: $media-l) {
-        margin: 0 0 3.2rem;
+        padding: 0 0 32px 0;
       }
     }
 

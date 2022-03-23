@@ -7,12 +7,12 @@ import LocationLinks from '../components/LocationLinks';
 const Contact = () => {
   return (
     <React.Fragment>
-      <Section r>
+      <Section s1 r>
         <Hero>
           <Form />
         </Hero>
       </Section>
-      <Section>
+      <Section s2>
         <LocationLinks />
       </Section>
     </React.Fragment>

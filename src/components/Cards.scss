@@ -1,17 +1,23 @@
-@import '../css/variables';
+// @import '../css/variables';
+
+$card-m: 691px;
+$card-l: 950px;
 
 .cards {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   gap: 4rem;
+  max-width: 40rem;
+  margin: 0 auto;
 
-  @media (min-width: $media-m) {
+  @media (min-width: $card-m) {
     gap: 3.2rem;
+    max-width: none;
   }
-  @media (min-width: $media-l) {
+  @media (min-width: $card-l) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 3.2rem 3rem;
+    gap: 32px 30px;
   }
 
   &__card {
@@ -24,14 +30,16 @@
     transition: background-color 0.2s;
     background-color: #fdf3f0;
 
-    @media (min-width: $media-m) {
-      grid-template-columns: 339px 1fr;
+    @media (min-width: $card-m) {
+      // grid-template-columns: 339px 1fr;
+      grid-template-columns: 49.27% 1fr; // 339/688
       grid-template-rows: auto;
     }
 
-    @media (min-width: $media-l) {
+    @media (min-width: $card-l) {
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
+      grid-template-rows: auto 1fr;
+      align-items: start;
 
       &:hover {
         cursor: pointer;
@@ -53,7 +61,8 @@
   }
 
   &__copy {
-    padding: 32px 30px;
+    // padding: 32px 30px;
+    padding: 32px 8.56%;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto auto;
@@ -63,6 +72,7 @@
 
     span {
       display: block;
+      padding-left: 5px;
       font-size: 2rem;
       font-weight: 600;
       line-height: 2.6rem;

@@ -3,7 +3,7 @@
 .cta {
   position: relative;
   width: calc(100% - 48px);
-  max-width: 1111px;
+  max-width: $width-max;
   margin: 0 auto;
   padding: 64px 24px;
   overflow: hidden;

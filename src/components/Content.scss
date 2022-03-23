@@ -11,7 +11,9 @@
     padding: 68px 58px;
   }
   @media (min-width: $media-l) {
-    padding: 154px 96px 154px 94px;
+    // padding: 154px 96px 154px 94px;
+    // Base padding on el width (assigned 1fr by .frame element)
+    padding: 24.25% 96px 24.25% 94px;
     align-items: flex-start;
     text-align: left;
   }
@@ -23,7 +25,8 @@
       padding-bottom: 94px;
     }
     @media (min-width: $media-l) {
-      padding: 154px 94px 154px 95px;
+      // padding: 154px 94px 154px 95px;
+      padding: 24.25% 94px 24.25% 95px;
     }
   }
 
@@ -33,6 +36,10 @@
     flex-direction: column;
     align-items: center;
     z-index: 5;
+
+    @media (min-width: $media-l) {
+      align-items: flex-start;
+    }
 
     span {
       display: block;
