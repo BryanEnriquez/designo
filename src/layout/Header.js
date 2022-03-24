@@ -41,7 +41,7 @@ const Header = (props) => {
   return (
     <header className={mod} id="header">
       <NavBar open={open} onClick={onBtnClick} logoColor={props.logoColor} />
-      {open && <Modal onBgClick={onBtnClick} />}
+      {open && <Modal mod="nav" onBgClick={onBtnClick} />}
     </header>
   );
 };
