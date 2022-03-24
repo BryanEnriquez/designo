@@ -1,15 +1,25 @@
+const DESIGN = ['design', ['3']];
+const INFO = 'info';
+
 export const calcLayoutMod = (location) => {
   switch (location) {
     case '/':
-      return null;
+      return [null, ['1', '2']];
     case '/web-design':
     case '/app-design':
     case '/graphic-design':
-      return 'design';
+      return DESIGN;
+    case '/about':
+      return [INFO, ['1', '4']];
+    case '/locations':
+      return [INFO, null];
+    case '/contact':
+      return [INFO, ['5']];
     default:
-      return 'info';
+      return [INFO, null];
   }
 };
+
 export const addMod = (cn, mod) => `${cn} ${cn}--${mod}`;
 
 export const addMods = (cn, mods) =>

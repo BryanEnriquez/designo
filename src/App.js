@@ -8,6 +8,7 @@ import Design from './routes/Design';
 import About from './routes/About';
 import Locations from './routes/Locations';
 import Contact from './routes/Contact';
+import NotFound from './routes/404';
 import './App.scss';
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="locations" element={<Locations />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<div>This page doesn't exist!</div>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <Footer logoColor="light" />
