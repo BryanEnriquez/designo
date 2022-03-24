@@ -44,22 +44,36 @@ export const inputConfig = [
   { name: MESSAGE, label: 'your message', inputType: 'textarea' },
 ];
 
-const validate = {
+const model = {
   validateLength: (val) => (val === '' ? "Can't be empty" : false),
-  [NAME]: (val) => {
-    const isValid = /^[a-z]+(\s{1}[a-z]+)*$/i.test(val);
-    if (!isValid) return 'Not a valid name';
+  [NAME]: {
+    optional: false,
+    check: (val) => {
+      const isValid = /^[a-z]+(\s{1}[a-z]+)*$/i.test(val);
+      if (!isValid) return 'Not a valid name';
+    },
   },
-  [EMAIL]: (val) => {
-    const isValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(val);
-    if (!isValid) return 'Not a valid email';
+  [EMAIL]: {
+    optional: false,
+    check: (val) => {
+      const isValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(val);
+      if (!isValid) return 'Please use a valid email address';
+    },
   },
-  [PHONE]: (val) => {
-    const isValid = /^\d[- ]?(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/.test(val);
-    if (!isValid) return 'Not a valid phone number';
+  [PHONE]: {
+    optional: true,
+    check: (val) => {
+      const isValid = /^\d[- ]?(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/.test(
+        val
+      );
+      if (!isValid) return 'Not a valid phone number';
+    },
   },
-  [MESSAGE]: (val) => {
-    return val.length < 20 && 'Min 20 characters';
+  [MESSAGE]: {
+    optional: false,
+    check: (val) => {
+      return val.length < 20 && 'Minimum length: 20 characters';
+    },
   },
 };
 
@@ -70,12 +84,20 @@ export const validateInputs = (state) => {
 
   formInputs.forEach(([key, obj]) => {
     const userInput = obj.value.trim();
-    const lengthMsg = validate.validateLength(userInput);
 
-    if (lengthMsg) return errors.push([key, lengthMsg]);
+    const emptyErr = model.validateLength(userInput);
 
-    const errorMsg = validate[key](userInput);
-    if (errorMsg) return errors.push([key, errorMsg]);
+    // Optional & empty err => No further validation
+    if (model[key].optional && emptyErr) {
+      return;
+    } else {
+      // Not optional => Report err if any
+      if (emptyErr) return errors.push([key, emptyErr]);
+    }
+
+    // (optional & not empty) || not optional => validate
+    const validationErr = model[key].check(userInput);
+    if (validationErr) return errors.push([key, validationErr]);
 
     // Add to final form if all checks passed
     validInputs[key] = userInput;
