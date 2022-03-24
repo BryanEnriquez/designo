@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Scroller from './components/Scroller';
 import Header from './layout/Header';
 import Main from './layout/Main';
@@ -12,7 +12,7 @@ import './App.scss';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Scroller />
       <Header logoColor="dark" cover={false} />
       <Routes>
@@ -28,7 +28,7 @@ const App = () => {
         </Route>
       </Routes>
       <Footer logoColor="light" />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
