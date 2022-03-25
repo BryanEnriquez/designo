@@ -10,7 +10,7 @@
   &--nav {
     z-index: 20;
     opacity: 0.5;
-    background-color: var(--color-primary-dark, #1d1c1e);
+    background-color: #000;
 
     @media (min-width: $media-m) {
       display: none;
@@ -19,6 +19,6 @@
 
   &--view {
     z-index: 150;
-    background-color: rgba(29, 28, 30, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
   }
 }

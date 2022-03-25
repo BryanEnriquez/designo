@@ -36,8 +36,8 @@ const Cards = () => {
     };
   }, []);
 
-  const renderCard = (el) => {
-    return (
+  const renderCards = (cards) =>
+    cards.map((el) => (
       <div
         className="cards__card"
         key={el.label}
@@ -48,8 +48,7 @@ const Cards = () => {
           <Copy main={el.label} p={el.p} />
         </div>
       </div>
-    );
-  };
+    ));
 
   const onBgClick = (e) => {
     e.preventDefault();
@@ -58,7 +57,7 @@ const Cards = () => {
 
   return (
     <div className="cards">
-      {items.map(renderCard)}
+      {renderCards(items)}
       {currentImg && (
         <Modal mod="view" onBgClick={onBgClick}>
           <View img={currentImg} onBtnClick={() => setCurrentImg(null)} />

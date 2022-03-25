@@ -93,7 +93,6 @@ $card-l: 950px;
 }
 
 .view {
-  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -101,11 +100,9 @@ $card-l: 950px;
   align-items: center;
 
   &__box {
+    position: relative;
     width: 95%;
     max-width: 525px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 
     @media (min-width: $media-l) {
       max-width: 700px;
@@ -113,9 +110,11 @@ $card-l: 950px;
   }
 
   &__btn {
-    display: block;
+    display: inline-block;
+    position: absolute;
+    top: calc(-10px - 3rem);
+    right: 0;
     border: 0;
-    padding-bottom: 15px;
     background-color: transparent;
   }
 
@@ -133,7 +132,6 @@ $card-l: 950px;
   img {
     display: block;
     width: 100%;
-    margin-bottom: 15px;
 
     @media (min-width: $media-l) {
       max-width: 700px;
