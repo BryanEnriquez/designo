@@ -15,7 +15,7 @@ const App = () => {
   return (
     <HashRouter>
       <Scroller />
-      <Header logoColor="dark" cover={false} />
+      <Header logoColor="dark" />
       <Routes>
         <Route path="/" element={<Main />}>
           <Route path="" element={<Home />} />
